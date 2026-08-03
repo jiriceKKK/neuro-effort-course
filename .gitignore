@@ -1,0 +1,30 @@
+node_modules/
+dist/
+dist-ssr/
+coverage/
+*.local
+
+# Environment files — never commit real values.
+.env
+.env.local
+.env.*.local
+
+# Editors
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Test artifacts
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+
+# Generated PWA output (built into dist/)
+dev-dist/
