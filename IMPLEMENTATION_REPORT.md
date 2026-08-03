@@ -309,7 +309,11 @@ Branch `main`, seven logical commits plus this report:
 | `ab933bd` | feat: add PWA support and GitHub Pages deployment |
 | `8b66800` | test: add unit, integration and end-to-end coverage |
 | `150923e` | docs: add architecture, authoring, deployment and quality documentation |
+| `6df3917` | docs: add implementation report |
 
 No force push was used at any point.
 
-Push result: see the final section, updated after `git push -u origin main`.
+**Push result: succeeded.** `git push -u origin main` created `main` on
+`https://github.com/jiriceKKK/neuro-effort-course.git` (the repository had no commits
+before this work) and set the upstream tracking branch. A later commit updates this line
+with the push outcome itself.
