@@ -1,0 +1,77 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# A newer commit supersedes an in-flight deployment, but a deployment that has already
+# started is allowed to finish so Pages is never left in a half-published state.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build and verify
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Configure GitHub Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
+      # Repository *variables* (Settings → Secrets and variables → Actions → Variables).
+      # Both values are public by design: the publishable key is only safe because
+      # migration 0001 enables RLS on every user table. A service-role key or a
+      # `sb_secret_…` key must never be added here.
+      - name: Verify (lint, types, content, MCQ audit, tests, build)
+        env:
+          VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_PUBLISHABLE_KEY: ${{ vars.VITE_SUPABASE_PUBLISHABLE_KEY }}
+          VITE_ALLOW_SIGNUP: ${{ vars.VITE_ALLOW_SIGNUP }}
+        run: npm run check
+
+      # `npm run check` already produced dist/, but building again against the resolved
+      # Pages base path keeps the deployed bundle independent of check-step ordering.
+      - name: Build production bundle
+        env:
+          VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_PUBLISHABLE_KEY: ${{ vars.VITE_SUPABASE_PUBLISHABLE_KEY }}
+          VITE_ALLOW_SIGNUP: ${{ vars.VITE_ALLOW_SIGNUP }}
+          # GITHUB_REPOSITORY is injected automatically and yields "/<repo>/" as the base.
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: npm run build
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
