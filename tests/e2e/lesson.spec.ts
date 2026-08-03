@@ -72,6 +72,42 @@ async function stubSupabase(page: Page): Promise<void> {
   })
 }
 
+/**
+ * Waits until the block index has actually reached IndexedDB.
+ *
+ * Advancing a block updates React state immediately and persists asynchronously, so
+ * reloading straight after a click can race the write. Polling the database makes the
+ * reload assertion deterministic — and asserts persistence itself rather than assuming it.
+ */
+async function waitForPersistedBlockIndex(
+  page: Page,
+  lessonId: string,
+  expected: number,
+): Promise<void> {
+  await expect
+    .poll(
+      async () =>
+        page.evaluate(async (id) => {
+          const db = await new Promise<IDBDatabase | null>((resolve) => {
+            const request = indexedDB.open('neuro-effort-course')
+            request.onsuccess = () => resolve(request.result)
+            request.onerror = () => resolve(null)
+          })
+          if (db === null) return null
+          return new Promise<number | null>((resolve) => {
+            const request = db.transaction('lessonProgress', 'readonly').objectStore('lessonProgress').getAll()
+            request.onsuccess = () => {
+              const rows = request.result as Array<{ lessonId: string; currentBlockIndex: number }>
+              resolve(rows.find((row) => row.lessonId === id)?.currentBlockIndex ?? null)
+            }
+            request.onerror = () => resolve(null)
+          })
+        }, lessonId),
+      { timeout: 10_000 },
+    )
+    .toBe(expected)
+}
+
 async function signIn(page: Page): Promise<void> {
   await page.goto('./')
   await expect(page.getByRole('button', { name: 'Přihlásit se' })).toBeVisible()
@@ -150,6 +186,7 @@ test('progress survives a reload', async ({ page }) => {
   await page.getByRole('button', { name: 'Potvrdit odhad' }).click()
   await page.getByRole('button', { name: 'Pokračovat' }).click()
   await expect(page.getByRole('heading', { name: /Pět typů důkazu/ })).toBeVisible()
+  await waitForPersistedBlockIndex(page, 'demo-evidence', 1)
 
   await page.reload()
 

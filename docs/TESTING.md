@@ -135,6 +135,10 @@ device profile is a phone (Pixel 7), because the product is mobile-first.
 Screenshots and traces are captured **only on failure** and land in `test-results/`,
 which is git-ignored. Do not commit them without a specific reason.
 
+Advancing a block persists asynchronously, so `progress survives a reload` polls
+IndexedDB via `page.evaluate` until the block index has actually landed before
+reloading. That removes the race and asserts persistence rather than assuming it.
+
 Playwright routes are matched in **reverse registration order** — the broad catch-alls are
 registered first and the specific `**/auth/v1/token**` handler last. Fulfilled responses
 still go through the browser's CORS checks, which is why the stubs send
