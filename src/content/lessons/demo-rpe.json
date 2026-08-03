@@ -1,0 +1,275 @@
+{
+  "id": "demo-rpe",
+  "version": 1,
+  "status": "demo",
+  "title": "Reward prediction error není samotná odměna",
+  "summary": "Chyba predikce odměny je rozdíl mezi tím, co jsme čekali, a tím, co se stalo. Lekce ukazuje, proč je učicím signálem právě tento rozdíl, a zároveň kde model končí a kde už by šlo o přestřelené tvrzení o mozku.",
+  "estimatedActiveMinutes": 11,
+  "minimumReasonableActiveMinutes": 10,
+  "maximumReasonableActiveMinutes": 12,
+  "prerequisiteLessonIds": ["demo-evidence"],
+  "conceptIds": [
+    "reward-prediction-error",
+    "expectation",
+    "dopamine-signal",
+    "reward-versus-signal"
+  ],
+  "learningObjectives": [
+    "Definovat chybu predikce odměny jako rozdíl mezi očekávaným a skutečným výsledkem.",
+    "Určit znaménko a přibližnou velikost chyby predikce ve třech typových situacích.",
+    "Odlišit chybu predikce od odměny samotné a od prožitku slasti.",
+    "Vysvětlit, co model o lidské motivaci netvrdí, a rozpoznat běžná přestřelená tvrzení o dopaminu."
+  ],
+  "sourceIds": ["schultz-1997", "pessiglione-2006"],
+  "demoNotice": "Ukázková lekce pro ověření aplikace. Nejde ještě o finální odborně auditovanou verzi kurzu.",
+  "blocks": [
+    {
+      "id": "predikce",
+      "type": "prediction",
+      "title": "Než začneme: tři možné výsledky",
+      "estimatedMinutes": 1,
+      "conceptIds": ["reward-prediction-error", "expectation"],
+      "sourceIds": [],
+      "question": {
+        "id": "demo-rpe-q-predikce",
+        "prompt": "Představte si tři lidi, kteří dostanou úplně stejnou odměnu — pochvalu od vedoucího. První ji vůbec nečekal. Druhý ji čekal a přišla. Třetí ji čekal, ale nepřišla vůbec. U kterého z nich podle vás vznikne nejsilnější učicí signál, tedy největší změna v tom, co bude příště očekávat? Zavažte se k odpovědi dřív, než budete číst dál.",
+        "options": [
+          {
+            "id": "necekal",
+            "text": "U prvního, protože výsledek se nejvíc rozešel s tím, co čekal.",
+            "feedback": "Tímto směrem míří i výklad. Odchylka od očekávání je to, co model považuje za učicí signál."
+          },
+          {
+            "id": "cekal-prislo",
+            "text": "U druhého, protože odměnu skutečně dostal a potvrdil si postup.",
+            "feedback": "Odměnu dostal, ale nedozvěděl se nic nového. Model předpovídá, že právě potvrzené očekávání vytváří jen malý signál."
+          },
+          {
+            "id": "cekal-neprislo",
+            "text": "U třetího, protože žádnou odměnu nedostal a to zamrzí nejvíc.",
+            "feedback": "Také zde vzniká silný signál, jen se záporným znaménkem. Model počítá s oběma směry odchylky, ne pouze s příjemným."
+          }
+        ],
+        "reveal": "Model chyby predikce odměny říká, že silný signál vzniká u prvního i u třetího — u obou se výsledek výrazně rozešel s očekáváním, jen jednou nahoru a podruhé dolů. Nejslabší signál má druhý člověk, přestože odměnu skutečně dostal. Odměna a učicí signál tedy nejsou totéž."
+      }
+    },
+    {
+      "id": "vyklad",
+      "type": "explanation",
+      "title": "Rozdíl, ne velikost",
+      "estimatedMinutes": 2.5,
+      "conceptIds": ["reward-prediction-error", "expectation", "dopamine-signal"],
+      "sourceIds": ["schultz-1997", "pessiglione-2006"],
+      "paragraphs": [
+        "Chyba predikce odměny je rozdíl mezi skutečným a očekávaným výsledkem. Když je výsledek lepší, než jsme čekali, vzniká kladná chyba predikce. Když je horší, vzniká záporná. Když odpovídá očekávání, je chyba malá nebo blízká nule — a to i tehdy, když je odměna sama o sobě velká.",
+        "To má jednu neintuitivní implikaci. Množství odměny nestačí k tomu, abychom odhadli, kolik se člověk naučí. Rozhodující je, o kolik se výsledek liší od toho, s čím dopředu počítal. Očekávání přitom nemusí být vědomá myšlenka; stačí, že se v dané situaci opakovaně něco dělo.",
+        "Empirický základ modelu pochází z měření aktivity dopaminergních neuronů u primátů. Schultz, Dayan a Montague (1997) shrnuli, že tyto neurony reagují na nečekanou odměnu, že se jejich odpověď postupně přesouvá na podnět, který odměnu spolehlivě předpovídá, a že aktivita klesá pod klidovou úroveň v okamžiku, kdy očekávaná odměna nepřijde. Časový průběh té aktivity odpovídá spíš signálu o odchylce než míře prožívané příjemnosti.",
+        "U lidí Pessiglione a kolegové (2006) farmakologicky ovlivnili dopaminový přenos a pozorovali odpovídající změnu v chování zaměřeném na odměnu i ve velikosti signálu chyby predikce měřeného ve striatu. To podporuje roli dopaminu v učení podle výsledku. Netvrdí to, že dopamin je totéž co potěšení, ani že se motivace dá zredukovat na jednu látku.",
+        "Model je nástroj na popis učicího signálu, ne úplná teorie lidské motivace. Nepokrývá hodnotu, kterou člověk cíli přisuzuje, náklady vynaloženého úsilí, sociální kontext, plánování ani schopnost odložit odměnu. U člověka navíc očekávání vzniká i z jazyka a z představ, ne pouze z opakované zkušenosti."
+      ],
+      "keyPrinciple": "Učení podle výsledku neřídí velikost odměny, ale její odchylka od očekávání. Plně očekávaná odměna nese málo informace, a proto vytváří malý signál.",
+      "commonMistake": "Popisovat dopamin jako „chemikálii slasti“, kterou lze vyčerpat, resetovat nebo detoxikovat. Nic z toho z těchto prací neplyne. Dopamin se podílí na řadě funkcí včetně pohybu a ochoty vynaložit úsilí, a jeho hladina se běžným používáním telefonu nevyčerpává."
+    },
+    {
+      "id": "model",
+      "type": "explanation",
+      "title": "Jednoduchý model chyby predikce",
+      "estimatedMinutes": 1,
+      "conceptIds": ["reward-prediction-error", "expectation", "reward-versus-signal"],
+      "sourceIds": ["schultz-1997"],
+      "paragraphs": [
+        "Celý model se dá zapsat jako jedna úvaha: signál = skutečný výsledek − očekávaný výsledek. Následující tabulka ukazuje, jak stejná odměna vede k různě velkému signálu podle toho, s čím člověk počítal."
+      ],
+      "model": {
+        "caption": "Stejná odměna, tři různá očekávání",
+        "rows": [
+          {
+            "situation": "Kolega vám poděkuje za drobnost, kterou nikdo nekomentuje",
+            "expectation": "Nečekali jste nic",
+            "outcome": "Přišlo poděkování",
+            "signal": "Kladná chyba predikce"
+          },
+          {
+            "situation": "Odevzdáváte práci, za kterou vás vedoucí vždy pochválí",
+            "expectation": "Čekali jste pochvalu",
+            "outcome": "Pochvala přišla",
+            "signal": "Malá chyba predikce"
+          },
+          {
+            "situation": "Odevzdáváte práci, za kterou vás vedoucí vždy pochválí",
+            "expectation": "Čekali jste pochvalu",
+            "outcome": "Nepřišlo nic",
+            "signal": "Záporná chyba predikce"
+          }
+        ],
+        "caveat": "Tabulka je učební zjednodušení, ne popis konkrétního nervového obvodu. Ukazuje směr úvahy a znaménko signálu, nikoli jeho skutečnou velikost, časový průběh ani to, které struktury se na něm u člověka podílejí."
+      }
+    },
+    {
+      "id": "otazka-signal",
+      "type": "multiple_choice",
+      "title": "Očekávaný výsledek",
+      "estimatedMinutes": 1,
+      "conceptIds": ["reward-prediction-error", "expectation"],
+      "sourceIds": [],
+      "question": {
+        "id": "demo-rpe-q-signal",
+        "prompt": "Student dostane za test přesně tu známku, se kterou dopředu počítal. Co model chyby predikce odměny říká o velikosti signálu?",
+        "options": [
+          {
+            "id": "maly",
+            "text": "Signál bude malý nebo blízký nule, protože výsledek odpovídá očekávání.",
+            "feedback": "Ano. Potvrzené očekávání nepřináší novou informaci, takže není co upravovat."
+          },
+          {
+            "id": "velky",
+            "text": "Signál bude velký, protože dobrá známka je sama o sobě odměnou.",
+            "feedback": "To je právě záměna odměny za signál. Odměna nastala, ale model počítá s rozdílem oproti očekávání, ne s hodnotou výsledku."
+          },
+          {
+            "id": "zaporny",
+            "text": "Signál bude výrazně záporný, protože se nedostavilo žádné překvapení.",
+            "feedback": "Záporný signál vzniká tehdy, když je výsledek horší než očekávání, ne když překvapení chybí. Bez rozdílu je signál blízko nule, nikoli pod ní."
+          },
+          {
+            "id": "hodnota",
+            "text": "Signál poroste s hodnotou známky nezávisle na tom, co student čekal.",
+            "feedback": "Tato možnost popisuje odměnu, ne chybu predikce. Právě tím se obě veličiny liší."
+          }
+        ],
+        "correctOptionId": "maly",
+        "explanation": "Klíčové je porovnání se stavem, který člověk předpokládal. Odpovídá-li výsledek očekávání, nemá se co učit, a signál zůstává malý.",
+        "cognitiveLevel": "mechanism"
+      }
+    },
+    {
+      "id": "otazka-rozdil",
+      "type": "multiple_choice",
+      "title": "Odměna a signál",
+      "estimatedMinutes": 1,
+      "conceptIds": ["reward-versus-signal", "reward-prediction-error"],
+      "sourceIds": [],
+      "question": {
+        "id": "demo-rpe-q-rozdil",
+        "prompt": "Co odlišuje chybu predikce odměny od odměny samotné?",
+        "options": [
+          {
+            "id": "rozdil",
+            "text": "Je to rozdíl mezi očekávaným a skutečným výsledkem.",
+            "feedback": "Ano. Odměna je výsledek, chyba predikce je informace o tom, jak se výsledek lišil."
+          },
+          {
+            "id": "intenzita",
+            "text": "Je to silnější podoba téhož příjemného prožitku.",
+            "feedback": "Chyba predikce není stupeň prožitku. Může být i záporná, tedy nastat v situaci, kdy žádná odměna nepřišla."
+          },
+          {
+            "id": "zpozdeni",
+            "text": "Je to odměna, která přichází s časovým zpožděním.",
+            "feedback": "Časování hraje roli v tom, kdy signál vzniká, ale samotné zpoždění z odměny chybu predikce neudělá."
+          },
+          {
+            "id": "vedomi",
+            "text": "Je to vědomé hodnocení toho, jak se výsledek povedl.",
+            "feedback": "Chyba predikce nevyžaduje vědomé posouzení. Očekávání se utváří i z opakované zkušenosti, kterou si člověk nevybavuje."
+          }
+        ],
+        "correctOptionId": "rozdil",
+        "explanation": "Odměna je stav světa, chyba predikce je porovnání tohoto stavu s předpokladem. Proto může velká odměna vyvolat malý signál a žádná odměna signál velký.",
+        "cognitiveLevel": "discrimination"
+      }
+    },
+    {
+      "id": "scenar",
+      "type": "scenario",
+      "title": "Aplikace na nový případ",
+      "estimatedMinutes": 1.5,
+      "conceptIds": ["reward-prediction-error", "expectation", "dopamine-signal"],
+      "sourceIds": [],
+      "situation": "Marek si každý večer zapisuje splněné úkoly do aplikace, která mu po každém zápisu ukáže stejnou pochvalnou hlášku. První týden ho hláška potěšila pokaždé. Po měsíci si jí skoro nevšimne, i když úkoly plní dál stejně spolehlivě.",
+      "question": {
+        "id": "demo-rpe-q-scenar",
+        "prompt": "Jak by tuto změnu popsal model chyby predikce odměny?",
+        "options": [
+          {
+            "id": "ocekavana",
+            "text": "Hláška se stala plně očekávanou, takže vyvolává menší chybu predikce.",
+            "feedback": "Ano. Nezměnila se hláška ani Markovo chování, změnilo se očekávání. Model přesně tuto situaci předpovídá."
+          },
+          {
+            "id": "hodnota",
+            "text": "Hodnota hlášky klesla, protože se opotřebovala jako fyzická odměna.",
+            "feedback": "Model nepracuje s opotřebením odměny. Stejná hláška by po delší pauze nebo v nečekaném okamžiku signál opět vyvolala."
+          },
+          {
+            "id": "motivace",
+            "text": "Markovi klesla celková motivace, kterou model měří přímo jako signál.",
+            "feedback": "Marek úkoly plní dál, takže motivace zjevně neklesla. Model navíc neměří motivaci, ale odchylku výsledku od očekávání."
+          },
+          {
+            "id": "dopamin",
+            "text": "Markovi se vyčerpal dopamin, který se musí několik týdnů obnovovat.",
+            "feedback": "Vyčerpání ani „reset“ dopaminu z těchto prací neplyne a v tomto smyslu jde o rozšířený mýtus. Popsanou změnu vysvětluje posun očekávání, ne úbytek látky."
+          }
+        ],
+        "correctOptionId": "ocekavana",
+        "explanation": "Situace ukazuje sílu i hranice modelu. Vysvětlí, proč nezměněná odměna přestala vytvářet signál. Neříká ale, zda Marek bude nebo nebude v návyku pokračovat — o tom rozhodují i jiné faktory než učicí signál.",
+        "cognitiveLevel": "transfer"
+      }
+    },
+    {
+      "id": "vybaveni",
+      "type": "free_recall",
+      "title": "Vysvětlete to vlastními slovy",
+      "estimatedMinutes": 1.5,
+      "conceptIds": ["reward-prediction-error", "reward-versus-signal"],
+      "sourceIds": ["schultz-1997"],
+      "question": {
+        "id": "demo-rpe-q-vybaveni",
+        "prompt": "Proč může úplně stejná odměna jednou vyvolat silný učicí signál a jindy téměř žádný? Napište dvě až tři věty vlastními slovy.",
+        "modelAnswer": "Učicí signál neodpovídá hodnotě odměny, ale rozdílu mezi skutečným a očekávaným výsledkem. Když odměna přijde nečekaně, je rozdíl velký a signál silný. Když ji člověk v dané situaci spolehlivě očekává, je rozdíl blízký nule, a to i tehdy, když je odměna sama o sobě velká.",
+        "requiredElements": [
+          "signál je rozdíl mezi skutečným a očekávaným výsledkem",
+          "nečekaná odměna vytváří velký rozdíl",
+          "očekávaná odměna vytváří rozdíl blízký nule",
+          "velikost odměny sama o sobě velikost signálu neurčuje"
+        ],
+        "explanation": "Zkontrolujte, zda vaše odpověď mluví o rozdílu oproti očekávání. Formulace typu „člověk si zvykne“ popisuje pozorování, ale nepojmenovává mechanismus, který za ním model předpokládá."
+      }
+    },
+    {
+      "id": "shrnuti",
+      "type": "summary",
+      "title": "Shrnutí",
+      "estimatedMinutes": 0.5,
+      "conceptIds": ["reward-prediction-error", "dopamine-signal"],
+      "sourceIds": ["schultz-1997", "pessiglione-2006"],
+      "mainMechanism": "Učicí signál odpovídá rozdílu mezi skutečným a očekávaným výsledkem. Kladný rozdíl posouvá očekávání nahoru, záporný dolů, a shoda s očekáváním nechává očekávání beze změny.",
+      "distinctions": [
+        "Odměna je výsledek; chyba predikce je informace o tom, jak se výsledek lišil od očekávání.",
+        "Kladná chyba predikce není totéž co příjemný pocit, záporná není totéž co zklamání.",
+        "Aktivita dopaminergních neuronů sleduje spíše odchylku od očekávání než míru prožívané slasti.",
+        "Model popisuje učicí signál, nikoli celou lidskou motivaci — hodnota cíle, náklady úsilí a kontext v něm nejsou obsaženy."
+      ],
+      "commonMisconception": "„Dopamin je odměna, a když ho vyčerpám, ztratím motivaci.“ Z uvedených prací nic takového neplyne. Popisují časový průběh signálu při učení, nikoli zásobu látky, kterou by šlo spotřebovat nebo resetovat.",
+      "nextTopic": "Dalším krokem je otázka, proč se člověk rozhoduje úsilí vynaložit, nebo ne — tedy jak se do hry dostávají náklady úsilí vedle očekávaného výsledku."
+    },
+    {
+      "id": "prenos",
+      "type": "personal_transfer",
+      "title": "Přenos do vlastní praxe",
+      "estimatedMinutes": 1,
+      "conceptIds": ["reward-prediction-error", "expectation"],
+      "sourceIds": [],
+      "prompt": "Vzpomeňte si na jednu konkrétní situaci z posledního týdne, kdy vás výsledek překvapil — příjemně nebo nepříjemně. Rozeberte ji pomocí modelu z této lekce.",
+      "guidance": [
+        "Popište situaci a výsledek jednou větou.",
+        "Zapište, co jste dopředu očekávali. Buďte konkrétní, ne obecní.",
+        "Určete znaménko chyby predikce: byl výsledek lepší, horší, nebo podle očekávání?",
+        "Uveďte, jak se po této zkušenosti změnilo vaše očekávání do příště."
+      ],
+      "placeholder": "Situace: …\nCo jsem čekal/a: …\nCo se stalo: …\nZnaménko chyby predikce: …\nJak se změnilo mé očekávání: …",
+      "minimumCharacters": 40
+    }
+  ]
+}

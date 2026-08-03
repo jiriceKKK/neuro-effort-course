@@ -1,0 +1,74 @@
+[
+  {
+    "id": "anecdote",
+    "name": "Anekdotická zkušenost",
+    "shortDefinition": "Jednotlivý příběh nebo osobní zkušenost popisující, co se komu stalo, bez srovnávací skupiny a bez kontroly dalších vlivů.",
+    "commonMisconception": "Že je příběh přesvědčivější než data, protože je konkrétní a týká se skutečného člověka."
+  },
+  {
+    "id": "correlational-study",
+    "name": "Korelační studie",
+    "shortDefinition": "Měření vztahu mezi dvěma proměnnými bez zásahu výzkumníka do toho, kdo co dostane.",
+    "commonMisconception": "Že dostatečně velký vzorek promění korelaci v důkaz o příčině."
+  },
+  {
+    "id": "randomized-experiment",
+    "name": "Randomizovaný experiment",
+    "shortDefinition": "Účastníci jsou náhodně přiřazeni do podmínek, takže se skupiny na začátku systematicky neliší.",
+    "commonMisconception": "Že randomizace sama o sobě zaručuje kvalitní a přenositelný výsledek."
+  },
+  {
+    "id": "systematic-review",
+    "name": "Systematický přehled",
+    "shortDefinition": "Předem popsané vyhledání, výběr a posouzení všech dostupných studií k jedné otázce.",
+    "commonMisconception": "Že jde o totéž co běžný přehledový článek, ve kterém si autor studie vybírá."
+  },
+  {
+    "id": "meta-analysis",
+    "name": "Metaanalýza",
+    "shortDefinition": "Statistické spojení výsledků více studií do jednoho souhrnného odhadu účinku.",
+    "commonMisconception": "Že metaanalýza je automaticky nejlepší dostupný důkaz bez ohledu na to, jaké studie shrnuje."
+  },
+  {
+    "id": "risk-of-bias",
+    "name": "Riziko zkreslení",
+    "shortDefinition": "Míra, do jaké mohl způsob provedení studie posunout výsledek jedním směrem nezávisle na skutečném účinku.",
+    "commonMisconception": "Že zkreslení znamená nepoctivost autorů, a ne běžnou vlastnost designu studie."
+  },
+  {
+    "id": "heterogeneity",
+    "name": "Heterogenita výsledků",
+    "shortDefinition": "Míra, do jaké se výsledky jednotlivých studií v souhrnu navzájem liší více, než by odpovídalo náhodě.",
+    "commonMisconception": "Že průměr přes velmi odlišné studie popisuje typický případ."
+  },
+  {
+    "id": "evidence-relevance",
+    "name": "Relevance důkazu",
+    "shortDefinition": "Míra, do jaké měřená proměnná, vzorek a situace odpovídají otázce, na kterou se ptáme.",
+    "commonMisconception": "Že kvalitní studie odpovídá na jakoukoli otázku, ke které se dá vztáhnout."
+  },
+  {
+    "id": "reward-prediction-error",
+    "name": "Chyba predikce odměny",
+    "shortDefinition": "Rozdíl mezi očekávaným a skutečným výsledkem; kladný, když je výsledek lepší než očekávání, záporný, když je horší.",
+    "commonMisconception": "Že chyba predikce je jen jiné označení pro odměnu nebo pro příjemný pocit."
+  },
+  {
+    "id": "expectation",
+    "name": "Očekávání výsledku",
+    "shortDefinition": "Předpoklad o tom, co se stane, vůči kterému se skutečný výsledek porovnává.",
+    "commonMisconception": "Že očekávání je vědomá myšlenka, kterou si člověk vždy uvědomuje."
+  },
+  {
+    "id": "dopamine-signal",
+    "name": "Dopaminový signál",
+    "shortDefinition": "Aktivita dopaminergních neuronů, jejíž časový průběh se v řadě situací blíží signálu chyby predikce, nikoli míře prožívané slasti.",
+    "commonMisconception": "Že dopamin je „chemikálie slasti“ a že se dá vyčerpat nebo resetovat."
+  },
+  {
+    "id": "reward-versus-signal",
+    "name": "Odměna versus signál o odměně",
+    "shortDefinition": "Rozlišení mezi samotným výsledkem a informací o tom, jak se výsledek liší od očekávání.",
+    "commonMisconception": "Že větší odměna vždy znamená větší učicí signál."
+  }
+]

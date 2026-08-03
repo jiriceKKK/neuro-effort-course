@@ -1,0 +1,22 @@
+{
+  "id": "neurokognitivni-psychologie-usili",
+  "title": "Neurokognitivní psychologie úsilí, motivace a změny chování",
+  "subtitle": "Jak vzniká úsilí, co s ním dělá odměna a proč je změna chování těžší, než se zdá",
+  "description": "Kurz propojuje poznatky z kognitivní psychologie a neurovědy s tím, jak si člověk skutečně organizuje vlastní úsilí. Klade důraz na kvalitu důkazů, na rozlišení modelu od naměřeného jevu a na praktický přenos do vlastního chování. Tato verze obsahuje dvě ukázkové lekce, které ověřují technickou i obsahovou architekturu kurzu.",
+  "language": "cs",
+  "version": 1,
+  "modules": [
+    {
+      "id": "modul-1-jak-cist-dukazy",
+      "title": "Modul 1 — Jak číst důkazy",
+      "description": "Než začneme mluvit o mozku, potřebujeme společné měřítko pro to, čemu věřit a proč. Bez něj se dají obhájit i tvrzení, která neplatí.",
+      "lessonIds": ["demo-evidence"]
+    },
+    {
+      "id": "modul-2-odmena-a-uceni",
+      "title": "Modul 2 — Odměna, očekávání a učení",
+      "description": "Jak se z výsledků stává učení. Modul zavádí chybu predikce odměny jako model a hned také ukazuje, kam až tento model sahá a kde končí.",
+      "lessonIds": ["demo-rpe"]
+    }
+  ]
+}

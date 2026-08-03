@@ -1,0 +1,97 @@
+[
+  {
+    "id": "schultz-1997",
+    "type": "journal-article",
+    "authors": ["Schultz, W.", "Dayan, P.", "Montague, P. R."],
+    "year": 1997,
+    "title": "A Neural Substrate of Prediction and Reward",
+    "container": "Science, 275(5306), 1593–1599",
+    "doi": "10.1126/science.275.5306.1593",
+    "note": "Klasická práce, ze které vychází model chyby predikce odměny. Popisuje aktivitu dopaminergních neuronů u primátů, nikoli přímý popis lidské motivace."
+  },
+  {
+    "id": "pessiglione-2006",
+    "type": "journal-article",
+    "authors": [
+      "Pessiglione, M.",
+      "Seymour, B.",
+      "Flandin, G.",
+      "Dolan, R. J.",
+      "Frith, C. D."
+    ],
+    "year": 2006,
+    "title": "Dopamine-dependent prediction errors underpin reward-seeking behaviour in humans",
+    "container": "Nature, 442(7106), 1042–1045",
+    "doi": "10.1038/nature05051",
+    "note": "Studie u lidí s farmakologickou manipulací dopaminu. Podporuje roli dopaminu v učení podle chyby predikce, netvrdí, že dopamin je „chemikálie slasti“."
+  },
+  {
+    "id": "prisma-2020",
+    "type": "journal-article",
+    "authors": [
+      "Page, M. J.",
+      "McKenzie, J. E.",
+      "Bossuyt, P. M.",
+      "Boutron, I.",
+      "Hoffmann, T. C.",
+      "Mulrow, C. D.",
+      "Moher, D."
+    ],
+    "year": 2021,
+    "title": "The PRISMA 2020 statement: an updated guideline for reporting systematic reviews",
+    "container": "BMJ, 372, n71",
+    "doi": "10.1136/bmj.n71",
+    "note": "Standard pro transparentní vykazování systematických přehledů. Ukazuje, co má přehled uvádět, aby se dal posoudit."
+  },
+  {
+    "id": "rob2-2019",
+    "type": "journal-article",
+    "authors": [
+      "Sterne, J. A. C.",
+      "Savović, J.",
+      "Page, M. J.",
+      "Elbers, R. G.",
+      "Higgins, J. P. T."
+    ],
+    "year": 2019,
+    "title": "RoB 2: a revised tool for assessing risk of bias in randomised trials",
+    "container": "BMJ, 366, l4898",
+    "doi": "10.1136/bmj.l4898",
+    "note": "Nástroj pro hodnocení rizika zkreslení v randomizovaných studiích. Doklad toho, že i randomizace sama o sobě nezaručuje kvalitu."
+  },
+  {
+    "id": "higgins-2003",
+    "type": "journal-article",
+    "authors": [
+      "Higgins, J. P. T.",
+      "Thompson, S. G.",
+      "Deeks, J. J.",
+      "Altman, D. G."
+    ],
+    "year": 2003,
+    "title": "Measuring inconsistency in meta-analyses",
+    "container": "BMJ, 327(7414), 557–560",
+    "doi": "10.1136/bmj.327.7414.557",
+    "note": "Zavádí měření heterogenity. Podklad pro tvrzení, že rozptyl mezi studiemi mění interpretovatelnost souhrnného odhadu."
+  },
+  {
+    "id": "ioannidis-2016",
+    "type": "journal-article",
+    "authors": ["Ioannidis, J. P. A."],
+    "year": 2016,
+    "title": "The Mass Production of Redundant, Misleading, and Conflicted Systematic Reviews and Meta-analyses",
+    "container": "The Milbank Quarterly, 94(3), 485–514",
+    "doi": "10.1111/1468-0009.12210",
+    "note": "Kritika automatického předpokladu, že metaanalýza je nejlepší dostupný důkaz."
+  },
+  {
+    "id": "osc-2015",
+    "type": "journal-article",
+    "authors": ["Open Science Collaboration"],
+    "year": 2015,
+    "title": "Estimating the reproducibility of psychological science",
+    "container": "Science, 349(6251), aac4716",
+    "doi": "10.1126/science.aac4716",
+    "note": "Rozsáhlý replikační projekt v psychologii. Podklad pro opatrnost vůči jednotlivým výsledkům."
+  }
+]

@@ -1,0 +1,215 @@
+{
+  "id": "demo-evidence",
+  "version": 1,
+  "status": "demo",
+  "title": "Jak poznat silnější psychologický důkaz",
+  "summary": "Praktické měřítko pro to, kdy tvrzení o motivaci brát vážně: co se dá vyčíst z jednotlivého příběhu, z korelace, z randomizovaného experimentu a co k tomu přidává systematický přehled nebo metaanalýza.",
+  "estimatedActiveMinutes": 9,
+  "minimumReasonableActiveMinutes": 8,
+  "maximumReasonableActiveMinutes": 10,
+  "prerequisiteLessonIds": [],
+  "conceptIds": [
+    "anecdote",
+    "correlational-study",
+    "randomized-experiment",
+    "systematic-review",
+    "meta-analysis",
+    "risk-of-bias",
+    "heterogeneity",
+    "evidence-relevance"
+  ],
+  "learningObjectives": [
+    "Rozlišit anekdotu, korelační studii, randomizovaný experiment, systematický přehled a metaanalýzu podle toho, na jakou otázku každý z nich odpovídá.",
+    "Vysvětlit, proč náhodné přiřazení mění to, co smíme z výsledku vyvodit.",
+    "Posoudit tvrzení opřené o metaanalýzu s ohledem na kvalitu vstupních studií, riziko zkreslení, heterogenitu a relevanci.",
+    "Aplikovat toto měřítko na konkrétní tvrzení o motivaci z internetu."
+  ],
+  "sourceIds": ["prisma-2020", "rob2-2019", "higgins-2003", "ioannidis-2016", "osc-2015"],
+  "demoNotice": "Ukázková lekce pro ověření aplikace. Nejde ještě o finální odborně auditovanou verzi kurzu.",
+  "blocks": [
+    {
+      "id": "predikce",
+      "type": "prediction",
+      "title": "Než začneme: čemu byste dali větší váhu?",
+      "estimatedMinutes": 1,
+      "conceptIds": ["anecdote", "randomized-experiment"],
+      "sourceIds": [],
+      "question": {
+        "id": "demo-evidence-q-predikce",
+        "prompt": "Dva zdroje tvrdí opak. Sportovní kouč popisuje, jak jeho klientům pomohlo ranní otužování k větší chuti do práce. Randomizovaný experiment se 180 účastníky žádný rozdíl v motivaci mezi otužováním a kontrolní podmínkou nenašel. Zavažte se k odpovědi dřív, než budete číst dál.",
+        "options": [
+          {
+            "id": "kouc",
+            "text": "Zkušenosti kouče, protože vycházejí z praxe a týkají se skutečných lidí.",
+            "feedback": "Praxe je výborný zdroj hypotéz. Problém je, že u sbírky příběhů nejde oddělit vliv otužování od toho, kdo si kouče vybere a co se těmto lidem děje v životě souběžně."
+          },
+          {
+            "id": "experiment",
+            "text": "Randomizovaný experiment, protože náhodné rozdělení srovnává obě skupiny.",
+            "feedback": "Tímto směrem míří i zbytek lekce. Náhodné přiřazení je hlavní důvod, proč experiment odpovídá na otázku o příčině lépe. Neznamená to ale, že je každý experiment automaticky kvalitní."
+          },
+          {
+            "id": "zadny",
+            "text": "Ani jeden, protože obě zjištění jsou stejně silná a navzájem se ruší.",
+            "feedback": "Zdroje se liší v tom, jakou otázku dokážou zodpovědět. To, že si protiřečí, ještě neznamená, že mají stejnou váhu."
+          }
+        ],
+        "reveal": "Většina lidí volí experiment — a v otázce „způsobuje otužování změnu motivace?“ je to obhajitelné. Zajímavější je ale důvod. Nejde o to, že experiment je „vědečtější“. Jde o to, že náhodné přiřazení je jediný krok, který dopředu vyloučí, že se skupiny lišily už před začátkem. Zbytek lekce ukazuje, kdy tato výhoda platí a kdy se vytrácí."
+      }
+    },
+    {
+      "id": "vyklad-hierarchie",
+      "type": "explanation",
+      "title": "Pět typů důkazu a otázka, na kterou odpovídají",
+      "estimatedMinutes": 2.5,
+      "conceptIds": [
+        "anecdote",
+        "correlational-study",
+        "randomized-experiment",
+        "systematic-review",
+        "meta-analysis",
+        "heterogeneity",
+        "risk-of-bias"
+      ],
+      "sourceIds": ["prisma-2020", "rob2-2019", "higgins-2003", "ioannidis-2016"],
+      "paragraphs": [
+        "Anekdota je jednotlivý případ: „mně to pomohlo“. Odpovídá na otázku, zda se něco vůbec někdy stalo, a je dobrým zdrojem nápadů. Neodpovídá na otázku, co by se stalo bez zásahu, protože chybí srovnání. Právě to srovnání je celý rozdíl.",
+        "Korelační studie měří vztah mezi dvěma proměnnými, aniž by kdokoli zasahoval do toho, kdo co dostane. Zjistí, že lidé, kteří dělají A, mívají také B. Nedokáže rozlišit tři možnosti: A ovlivňuje B, B ovlivňuje A, nebo obojí ovlivňuje třetí faktor. Větší vzorek tento problém nevyřeší — jen zpřesní odhad vztahu, jehož směr zůstává neznámý.",
+        "Randomizovaný experiment přiřadí účastníky do podmínek náhodně. Tím dopředu vyrovná i ty vlastnosti, které nikoho nenapadlo měřit, takže rozdíl na konci lze připsat zásahu. Randomizace ale sama o sobě nestačí: záleží na tom, zda účastníci a hodnotitelé věděli, kdo je v jaké skupině, kolik lidí studii opustilo a zda se měřený výsledek vykazoval celý, nebo jen v té podobě, která vyšla.",
+        "Systematický přehled hledá studie podle předem popsaného postupu a popisuje, co se našlo, včetně toho, co vyšlo nepříznivě. Jeho hodnota není v tom, že jich shrnuje hodně, ale v tom, že se dá zkontrolovat, jak výběr proběhl.",
+        "Metaanalýza k tomu přidává statistické spojení výsledků do jednoho čísla. To má smysl, pokud studie měří dostatečně podobnou věc dostatečně podobným způsobem. Když se výsledky mezi studiemi silně rozcházejí, souhrnný odhad popisuje průměr, který neodpovídá téměř žádné skutečné situaci."
+      ],
+      "keyPrinciple": "Typ studie neurčuje kvalitu důkazu sám o sobě. Určuje, jakou otázku smíme položit. Kvalitu pak rozhoduje provedení studie, způsob měření, riziko zkreslení, rozptyl mezi studiemi a to, jak blízko je zkoumaná situace té naší.",
+      "commonMistake": "Zacházet s pořadím „anekdota → korelace → experiment → přehled → metaanalýza“ jako s žebříčkem, ve kterém vyšší příčka vždy poráží nižší. Špatně provedená metaanalýza slabých studií není silnějším důkazem než jeden pečlivě provedený experiment. Metaanalýza dědí slabiny toho, co shrnuje."
+    },
+    {
+      "id": "otazka-korelace",
+      "type": "multiple_choice",
+      "title": "Co z toho vyplývá",
+      "estimatedMinutes": 1.5,
+      "conceptIds": ["correlational-study"],
+      "sourceIds": [],
+      "question": {
+        "id": "demo-evidence-q-korelace",
+        "prompt": "Studie sledovala čtyři tisíce dospělých po dobu dvou let a zjistila, že lidé, kteří ráno cvičí, uvádějí nižší míru prokrastinace. Nikdo účastníkům neurčoval, zda mají cvičit. Co z tohoto zjištění vyplývá nejpřesněji?",
+        "options": [
+          {
+            "id": "vztah",
+            "text": "Mezi ranním cvičením a nižší prokrastinací je vztah, jehož směr studie neurčuje.",
+            "feedback": "Přesně tak. Studie nikomu neurčovala podmínku, takže popisuje souběžný výskyt. Směr vlivu i možný třetí faktor zůstávají otevřené."
+          },
+          {
+            "id": "pricina",
+            "text": "Ranní cvičení snižuje prokrastinaci, protože se obě proměnné mění společně.",
+            "feedback": "Společná změna je právě to, co korelace znamená — a je to nutná, nikoli postačující podmínka příčiny. Bez zásahu do přiřazení nelze vyloučit, že působí něco třetího, například pravidelný spánkový režim."
+          },
+          {
+            "id": "obracene",
+            "text": "Nižší prokrastinace vede k rannímu cvičení, protože jde o dřívější návyk.",
+            "feedback": "Tento směr je stejně možný jako opačný, ale data ho nepodporují o nic víc. Pořadí, ve kterém návyky v životě vznikly, studie neměřila."
+          },
+          {
+            "id": "vzorek",
+            "text": "Velký vzorek čtyř tisíc lidí dělá ze zjištění spolehlivý důkaz o příčině.",
+            "feedback": "Velikost vzorku zpřesňuje odhad, ale neřeší otázku směru. Systematický rozdíl mezi lidmi, kteří ráno cvičí a kteří ne, zůstane při jakémkoli počtu účastníků."
+          }
+        ],
+        "correctOptionId": "vztah",
+        "explanation": "Rozhodující je způsob přiřazení, ne počet účastníků. Když o zařazení rozhodli sami účastníci, liší se skupiny už na začátku a tento rozdíl se promítne do výsledku.",
+        "cognitiveLevel": "discrimination"
+      }
+    },
+    {
+      "id": "scenar-metaanalyza",
+      "type": "scenario",
+      "title": "Nová metaanalýza v článku",
+      "estimatedMinutes": 1,
+      "conceptIds": ["meta-analysis", "heterogeneity", "risk-of-bias"],
+      "sourceIds": ["higgins-2003", "ioannidis-2016"],
+      "situation": "Kamarád vám pošle článek s titulkem „Metaanalýza dokazuje, že vizualizace cílů zvyšuje výkon“. V textu se uvádí, že metaanalýza shrnula dvanáct studií, z nichž devět mělo deset až dvacet účastníků, a že se odhady účinku napříč studiemi výrazně rozcházely.",
+      "question": {
+        "id": "demo-evidence-q-scenar",
+        "prompt": "Jaký postup nejlépe odpovídá tomu, co o tomto typu důkazu víme?",
+        "options": [
+          {
+            "id": "overit",
+            "text": "Ověřit kvalitu vstupních studií a rozptyl výsledků, než závěr přijmeme.",
+            "feedback": "Ano. Souhrnný odhad z rozcházejících se malých studií je nutné číst s ohledem na to, co do něj vstoupilo. Rozptyl mezi studiemi navíc sám o sobě naznačuje, že jedno číslo situaci nepopisuje."
+          },
+          {
+            "id": "prijmout",
+            "text": "Přijmout závěr, protože metaanalýza stojí v hierarchii důkazů nejvýše.",
+            "feedback": "Postavení v hierarchii je vlastnost metody, ne konkrétní práce. Metaanalýza přebírá slabiny studií, které shrnuje, a v tomto případě jde o malé a nesourodé studie."
+          },
+          {
+            "id": "odmitnout",
+            "text": "Odmítnout závěr, protože souhrn malých studií nemá žádnou vypovídací hodnotu.",
+            "feedback": "To je opačný extrém. I nesourodý souhrn může ukázat, kde je efekt nejistý a jaké studie chybí. Odmítnutí bez posouzení je stejně nekritické jako přijetí."
+          },
+          {
+            "id": "pocet",
+            "text": "Počkat, až počet shrnutých studií vzroste alespoň na padesát.",
+            "feedback": "Počet studií není to, co v tomto případě chybí. Padesát stejně malých a stejně nesourodých studií problém nevyřeší, pouze ho zprůměruje přesněji."
+          }
+        ],
+        "correctOptionId": "overit",
+        "explanation": "Rozhodujícím vodítkem je kvalita a soudržnost vstupů, ne označení metody. Když se studie výrazně rozcházejí, je souhrnné číslo spíš popisem rozptylu než odhadem typického účinku.",
+        "cognitiveLevel": "transfer"
+      }
+    },
+    {
+      "id": "vybaveni-randomizace",
+      "type": "free_recall",
+      "title": "Vysvětlete to vlastními slovy",
+      "estimatedMinutes": 1.5,
+      "conceptIds": ["randomized-experiment", "correlational-study"],
+      "sourceIds": ["rob2-2019"],
+      "question": {
+        "id": "demo-evidence-q-vybaveni",
+        "prompt": "Proč randomizovaný experiment odpovídá na otázku „způsobuje X změnu Y?“ lépe než korelační studie? Napište dvě až tři věty vlastními slovy.",
+        "modelAnswer": "V randomizovaném experimentu rozhoduje o zařazení do skupiny náhoda, takže se skupiny na začátku systematicky neliší — a to ani ve vlastnostech, které nikdo neměřil. Rozdíl naměřený na konci proto lze připsat zásahu. V korelační studii si zařazení volí účastníci sami, takže se skupiny liší už předem a naměřený vztah může vzniknout obráceným směrem vlivu nebo působením třetí proměnné.",
+        "requiredElements": [
+          "náhodné přiřazení do podmínek",
+          "skupiny jsou na začátku srovnatelné, včetně neměřených vlastností",
+          "u korelace zůstává otevřený obrácený směr vlivu",
+          "u korelace zůstává otevřená třetí proměnná"
+        ],
+        "explanation": "Zkontrolujte si, zda vaše odpověď zmiňuje mechanismus (náhodné přiřazení), nikoli jen výsledek („experiment je spolehlivější“). Randomizace přitom nezaručuje kvalitu celé studie — zaslepení, úbytek účastníků a způsob vykazování výsledků zůstávají samostatnými otázkami."
+      }
+    },
+    {
+      "id": "shrnuti",
+      "type": "summary",
+      "title": "Shrnutí",
+      "estimatedMinutes": 0.5,
+      "conceptIds": ["evidence-relevance", "meta-analysis"],
+      "sourceIds": ["osc-2015"],
+      "mainMechanism": "Sílu důkazu určuje především způsob přiřazení účastníků a kvalita provedení, protože ty rozhodují, jaká alternativní vysvětlení zůstávají ve hře. Typ studie říká, jakou otázku smíme položit; provedení říká, nakolik odpovědi věřit.",
+      "distinctions": [
+        "Korelace popisuje souběžný výskyt, randomizace umožňuje mluvit o příčině.",
+        "Systematický přehled kontroluje výběr studií, metaanalýza k tomu přidává spojení výsledků do jednoho čísla.",
+        "Velký vzorek zpřesňuje odhad, ale neopravuje systematické zkreslení.",
+        "Kvalitní studie nemusí být relevantní: záleží na tom, koho, co a v jaké situaci měřila."
+      ],
+      "commonMisconception": "„Metaanalýza to dokázala.“ Metaanalýza nedokazuje, shrnuje. Pokud shrnuje malé, nesourodé nebo zkreslené studie, dostane přesnější číslo se stejnými slabinami.",
+      "nextTopic": "Až budeme mít měřítko pro důkazy, můžeme se pustit do prvního mechanismu: jak se z výsledků stává učení a proč záleží víc na očekávání než na velikosti odměny."
+    },
+    {
+      "id": "prenos",
+      "type": "personal_transfer",
+      "title": "Přenos do vlastní praxe",
+      "estimatedMinutes": 1,
+      "conceptIds": ["evidence-relevance", "risk-of-bias"],
+      "sourceIds": [],
+      "prompt": "Vzpomeňte si na jedno konkrétní tvrzení o motivaci nebo produktivitě, které jste v posledních týdnech viděli online. Zapište ho a posuďte ho podle měřítka z této lekce.",
+      "guidance": [
+        "Napište tvrzení co nejpřesněji, tak jak bylo formulováno.",
+        "Uveďte, o jaký typ důkazu se opírá — příběh, korelace, experiment, přehled, metaanalýza, nebo nic z toho.",
+        "Zapište, jaká alternativní vysvětlení zůstávají ve hře.",
+        "Rozhodněte, co byste potřebovali vidět, abyste tvrzení přijali nebo odmítli."
+      ],
+      "placeholder": "Tvrzení: …\nTyp důkazu: …\nCo zůstává nevysvětleno: …\nCo bych potřeboval/a vidět: …",
+      "minimumCharacters": 40
+    }
+  ]
+}
